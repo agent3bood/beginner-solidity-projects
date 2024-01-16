@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import TokenABI from "./abi/GLDToken.json";
 import NFTABI from "./abi/GLDNFT.json";
 import Gravatar from "react-gravatar";
+import { Header } from "common";
 
 const tokenAddress = process.env.REACT_APP_TOKEN_ADDRESS;
 const nftAddress = process.env.REACT_APP_NFT_ADDRESS;
@@ -103,34 +104,13 @@ function App() {
 
   return (
     <div>
-      <header className={"bg-sky-400 sticky top-0 p-2"}>
-        {!signer && (
-          <button
-            className={
-              "bg-sky-600 hover:bg-sky-800  font-bold py-2 px-4 text-white rounded"
-            }
-            onClick={() => connectWallet({ provider, setSigner })}
-          >
-            Connect
-          </button>
-        )}
-        {signer && (
-          <div className={"flex flex-row"}>
-            <button
-              className={
-                "bg-rose-600 hover:bg-rose-800 font-bold py-2 px-4 text-white rounded"
-              }
-              onClick={() => disconnectWallet()}
-            >
-              Disconnect
-            </button>
-            <div className={"grow"}></div>
-            <p className={"bg-sky-600 font-bold text-white py-2 px-4 rounded"}>
-              {formatAddress(address)}
-            </p>
-          </div>
-        )}
-      </header>
+      <Header
+        signer={signer}
+        setSigner={setSigner}
+        provider={provider}
+        address={address}
+        setAddress={setAddress}
+      />
       <div className={"h-12"}></div>
       <div className={"p-4"}>
         <div className={"p-2 max-w rounded overflow-hidden shadow"}>
@@ -282,23 +262,6 @@ async function getConnectedSigner({ provider, setSigner }) {
   } catch (e) {
     console.error(e);
   }
-}
-
-async function connectWallet({ provider, setSigner }) {
-  if (window.ethereum) {
-    try {
-      const signer = await provider.getSigner();
-      setSigner(signer);
-    } catch (e) {
-      alert("Could not connect");
-    }
-  } else {
-    alert("Ethereum object not found, install MetaMask.");
-  }
-}
-
-function disconnectWallet() {
-  alert("Use Your Wallet To Disconnect!");
 }
 
 export default App;
