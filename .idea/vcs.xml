@@ -4,5 +4,7 @@
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/purchase-nft-with-erc20/lib/forge-std" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/purchase-nft-with-erc20/lib/forge-std/lib/ds-test" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/vesting/lib/forge-std" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/vesting/lib/forge-std/lib/ds-test" vcs="Git" />
   </component>
 </project>
