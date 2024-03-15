@@ -13,7 +13,7 @@ const Header = props => {
     provider,
     address,
     setAddress
-  } = props;
+  } = props.useEth;
   const connectWallet = async _ref => {
     let {
       provider,

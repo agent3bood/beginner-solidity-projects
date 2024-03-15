@@ -3,15 +3,18 @@ import { useEffect, useState } from "react";
 import TokenABI from "./abi/GLDToken.json";
 import NFTABI from "./abi/GLDNFT.json";
 import Gravatar from "react-gravatar";
-import { Header } from "common";
+import { Header, UseEthereum } from "common/index";
 
 const tokenAddress = process.env.REACT_APP_TOKEN_ADDRESS;
 const nftAddress = process.env.REACT_APP_NFT_ADDRESS;
 
 function App() {
-  const [provider, setProvider] = useState(null);
-  const [signer, setSigner] = useState(null);
-  const [address, setAddress] = useState(null);
+  const useEth = UseEthereum();
+  const { provider, setProvider, signer, setSigner, address, setAddress } =
+    useEth;
+  // const [provider, setProvider] = useState(null);
+  // const [signer, setSigner] = useState(null);
+  // const [address, setAddress] = useState(null);
   const [balance, setBalance] = useState(0);
   const [contractToken, setContractToken] = useState();
   const [contractNFT, setContractNFT] = useState();
@@ -105,11 +108,12 @@ function App() {
   return (
     <div>
       <Header
-        signer={signer}
-        setSigner={setSigner}
-        provider={provider}
-        address={address}
-        setAddress={setAddress}
+        useEth={useEth}
+        // signer={signer}
+        // setSigner={setSigner}
+        // provider={provider}
+        // address={address}
+        // setAddress={setAddress}
       />
       <div className={"h-12"}></div>
       <div className={"p-4"}>

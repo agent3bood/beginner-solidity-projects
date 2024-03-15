@@ -1,7 +1,7 @@
 import React from "react"
 
 const Header = (props) => {
-    const {signer, setSigner, provider, address, setAddress} = props;
+    const {signer, setSigner, provider, address, setAddress} = props.useEth;
 
     const connectWallet = async ({provider, setSigner}) => {
         if (window.ethereum) {
