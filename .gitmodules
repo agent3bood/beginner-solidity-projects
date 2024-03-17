@@ -7,3 +7,6 @@
 [submodule "nft_swap/lib/forge-std"]
 	path = nft_swap/lib/forge-std
 	url = https://github.com/foundry-rs/forge-std
+[submodule "croudfunding/lib/forge-std"]
+	path = croudfunding/lib/forge-std
+	url = https://github.com/foundry-rs/forge-std
