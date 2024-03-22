@@ -1,9 +1,12 @@
-## Ten beginner project ideas after you learn Solidity
+# In this project I solve the following problem with Solidity and Foundry:-
 
 https://www.rareskills.io/post/beginner-solidity-projects
 
+<details>
+<summary>Ten beginner project ideas after you learn Solidity</summary>
+
 1. Purchase NFT with ERC20 tokens
-   Bulld a classic NFT that can only be minted by paying with a particular ERC20 token.
+   Build a classic NFT that can only be minted by paying with a particular ERC20 token.
 
 
 2. Time unlocked ERC20 / vesting contract
@@ -65,3 +68,4 @@ Warning: it’s very easy to accidentally compute the rewards in such a way that
 Because smart contracts cannot move state forward on their own, anyone can call dealerNextMove() to keep the game moving forward if it is the dealer’s turn. In a real application, you’d need an offchain computer to keep the dealer going, but let’s not worry about this for now.
 
 You should force players to make their move within 10 blocks to avoid anyone holding the game up.
+</details>
