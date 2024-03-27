@@ -13,3 +13,6 @@
 [submodule "auction/lib/forge-std"]
 	path = auction/lib/forge-std
 	url = https://github.com/foundry-rs/forge-std
+[submodule "nft_marketplace/lib/forge-std"]
+	path = nft_marketplace/lib/forge-std
+	url = https://github.com/foundry-rs/forge-std
